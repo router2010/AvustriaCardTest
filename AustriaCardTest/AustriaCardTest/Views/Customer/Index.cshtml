@@ -1,0 +1,30 @@
+﻿@model List<AustriaCardTest.Models.Customer>
+
+<h2>Customer List</h2>
+
+<a href="/Customer/CustomerInformations" class="btn btn-primary">Create New</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.Address</td>
+                <td>
+                    <a href="/Customer/CustomerInformations/@item.Id">Edit</a> |
+                    <a href="/Customer/Delete/@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
